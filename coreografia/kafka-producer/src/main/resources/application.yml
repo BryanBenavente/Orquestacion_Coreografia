@@ -1,5 +1,5 @@
 server:
-  port: 8098
+  port: 8099
 
 spring:
   kafka:
@@ -10,4 +10,3 @@ kafka:
   consumer:
     bootstrap-servers: localhost:9092
     group-id: portabilidad-grupo
-    topic_name: topic-demo
