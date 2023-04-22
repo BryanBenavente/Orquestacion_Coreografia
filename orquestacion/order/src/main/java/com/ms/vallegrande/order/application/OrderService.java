@@ -1,23 +1,14 @@
 package com.ms.vallegrande.order.application;
 
-import com.ms.vallegrande.order.domain.Order;
-import com.ms.vallegrande.order.domain.OrderRepository;
+import com.ms.vallegrande.order.domain.OrderRequest;
+import com.ms.vallegrande.order.domain.OrderResponse;
 import org.springframework.stereotype.Service;
 
+
 @Service
-public class OrderService {
+public interface OrderService {
 
-    OrderRepository orderRepository;
+    OrderResponse saveOrder(OrderRequest orderRequest);
 
-    public OrderService(OrderRepository orderRepository) {
-        this.orderRepository = orderRepository;
-    }
-
-    public Order saveOrder(Order order){
-        return this.orderRepository.save(order);
-    }
-
-    public void updateOrder(Order order){
-        this.orderRepository.update(order);
-    }
+    void updateOrder(OrderRequest orderRequest);
 }

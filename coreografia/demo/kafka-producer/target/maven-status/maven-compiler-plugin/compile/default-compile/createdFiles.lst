@@ -1,0 +1,5 @@
+com\example\kafka\producer\producer\KafkaSender.class
+com\example\kafka\producer\ConsumidorKafka.class
+com\example\kafka\producer\expose\ProducerController.class
+com\example\kafka\producer\config\KafkaConfig.class
+com\example\kafka\producer\model\Product.class

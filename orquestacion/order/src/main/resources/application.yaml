@@ -1,9 +1,8 @@
 spring:
   data:
-    mongo:
-      host: localhost
-      port: 27017
-      uri: mongodb://localhost/test
+    mongodb:
+      uri: mongodb+srv://bryanbenavente:PyZlRAr5ahRJZ80L@cluster0.2leex.mongodb.net/?retryWrites=true&w=majority
+      database: orquestacion
   application:
     name: order-service
 
@@ -16,8 +15,4 @@ eureka:
       defaultZone: http://localhost:8099/eureka/
   instance:
     preferIpAddress: true
-    hostName: 192.168.1.10
-
-hystrix:
-  dashboard:
-    proxy-stream-allow-list: "*"
+    hostName: 192.168.43.77

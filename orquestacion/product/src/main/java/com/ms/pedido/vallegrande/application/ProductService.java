@@ -1,41 +1,21 @@
 package com.ms.pedido.vallegrande.application;
 
-import com.ms.pedido.vallegrande.domain.Product;
-import com.ms.pedido.vallegrande.domain.ProductRepository;
+import com.ms.pedido.vallegrande.domain.ProductRequest;
+import com.ms.pedido.vallegrande.domain.ProductResponse;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Service;
 import java.util.List;
 
-@Service
-public class ProductService {
 
-    ProductRepository productRepository;
+public interface ProductService {
 
-    public ProductService(ProductRepository productRepository){
-        this.productRepository = productRepository;
-    }
+    List<ProductResponse> findAll();
 
-    public List<Product> findAll() {
-        return productRepository.findAll();
-    }
+    ProductResponse findItemById(String id);
 
-    public Product findItemById(String id) {
-        return productRepository.findItemById(id);
-    }
+    ProductResponse create(ProductRequest productRequest);
 
-    public Product create(Product product) {
-        System.out.println(product.toString());
-        return productRepository.create(product);
-    }
+    ResponseEntity<?> update(ProductRequest productRequest);
 
-    public ResponseEntity<?> update(Product product) {
-        productRepository.update(product);
-        return new ResponseEntity<String>("Product update.", HttpStatus.CREATED);
-    }
+    ResponseEntity<?> delete(String id);
 
-    public ResponseEntity<?> delete(String id) {
-        productRepository.delete(id);
-        return new ResponseEntity<String>("Product delete.", HttpStatus.CREATED);
-    }
 }

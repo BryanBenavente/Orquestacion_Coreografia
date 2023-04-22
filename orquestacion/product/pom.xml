@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ms.vallegrande</groupId>
-	<artifactId>product</artifactId>
+	<artifactId>productRequest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>vallegrande</name>
 	<description>Product</description>
@@ -27,15 +27,11 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 			<version>2.4.2</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-mongodb -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>
-			<version>2.5.6</version>
-		</dependency>
-		<dependency>
-			<groupId>org.mongodb</groupId>
-			<artifactId>mongo-java-driver</artifactId>
-			<version>3.11.2</version>
+			<version>3.0.4</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>
