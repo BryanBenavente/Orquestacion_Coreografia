@@ -1,7 +1,7 @@
 spring:
   data:
     mongodb:
-      uri: mongodb+srv://bryanbenavente:PyZlRAr5ahRJZ80L@cluster0.2leex.mongodb.net/?retryWrites=true&w=majority
+      uri: <modificar>
       database: orquestacion
   application:
     name: order-service
