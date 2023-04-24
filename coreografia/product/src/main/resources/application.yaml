@@ -6,7 +6,7 @@ spring:
     name: product-service
   data:
     mongodb:
-      uri: mongodb+srv://bryanbenavente:PyZlRAr5ahRJZ80L@cluster0.2leex.mongodb.net/?retryWrites=true&w=majority
+      uri: <modificar>
       database: coreografia
   kafka:
     bootstrap-servers: localhost:9092
