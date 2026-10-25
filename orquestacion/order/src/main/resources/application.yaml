@@ -1,18 +1,15 @@
-spring:
-  data:
-    mongodb:
-      uri: <modificar>
-      database: orquestacion
-  application:
-    name: order-service
-
 server:
   port: 8093
 
+spring:
+  application:
+    name: order-service
+
 eureka:
   client:
-    serviceUrl:
+    service-url:
       defaultZone: http://localhost:8099/eureka/
+    fetch-registry: true
+    register-with-eureka: true
   instance:
-    preferIpAddress: true
-    hostName: 192.168.43.77
+    prefer-ip-address: true

@@ -1,28 +1,28 @@
 server:
-  port: 8092
+  port: 8095
 
 spring:
   application:
-    name: product-service
+    name: book-service
   data:
     mongodb:
-      uri: <modificar>
-      database: coreografia
-  kafka:
-    bootstrap-servers: localhost:9092
+      uri: ${MONGODB_URI}
+      database: orquestacion
   cloud:
-    stream:
-      kafka:
-        streams:
-          binder:
-            functions:
-              consumerProduct:
-                applicationId: consumerProduct
+    function:
+      definition: consumerBook
 
-      function:
-        definition: consumerProduct;
+    stream:
+      default:
+        contentType: application/json
+
       bindings:
-        consumerProduct-in-0:
+        consumerBook-in-0:
           destination: orders.buy
+          group: books-group
           consumer:
-            maxAttempts: 1
+            maxAttempts: 3
+
+      kafka:
+        binder:
+          brokers: ${KAFKA_BROKERS}

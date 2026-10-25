@@ -4,23 +4,31 @@ server:
 spring:
   application:
     name: order-service
+
   data:
     mongodb:
-      uri: <modificar>
-      database: coreografia
-  kafka:
-    bootstrap-servers: localhost:9092
+      uri: ${MONGODB_URI}
+      database: orquestacion
+
   cloud:
+    function:
+      definition: requestMessageProducer
+
     stream:
+      default:
+        content-type: application/json
+
+      bindings:
+        requestMessageProducer-out-0:
+          destination: orders.buy
+          content-type: application/json
+
       kafka:
+        binder:
+          brokers: ${KAFKA_BROKERS}
+
         bindings:
           requestMessageProducer-out-0:
             producer:
               configuration:
-                key:
-                  serializer: org.apache.kafka.common.serialization.LongSerializer
-      function:
-        definition: requestMessageProducer;
-      bindings:
-        requestMessageProducer-out-0:
-          destination: orders.buy
+                key.serializer: org.apache.kafka.common.serialization.StringSerializer
