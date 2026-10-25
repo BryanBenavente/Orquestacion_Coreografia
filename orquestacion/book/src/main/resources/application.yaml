@@ -1,0 +1,18 @@
+server:
+  port: 8092
+
+spring:
+  mongodb:
+    uri: ${MONGODB_URI}
+    database: orquestacion
+  application:
+    name: book-service
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8099/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    prefer-ip-address: true
